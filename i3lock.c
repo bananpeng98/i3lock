@@ -363,6 +363,8 @@ static void input_done(void) {
      * too early. */
     STOP_TIMER(clear_indicator_timeout);
 
+    system("lock-fail");
+
     /* beep on authentication failure, if enabled */
     if (beep) {
         xcb_bell(conn, 100);
